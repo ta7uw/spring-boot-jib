@@ -1,9 +1,12 @@
 buildscript {
+    ext {
+        springBootVersion = '2.1.3.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -32,6 +35,9 @@ dependencies {
 
 jib {
     container {
+        jvmFlags = ['-Xms512m', '-Xdebug']
+        mainClass = 'com.demo.project.springbootjibdemo.SpringbootJibDemoApplication'
+        ports = ['8080']
         useCurrentTimestamp = true
     }
 }
