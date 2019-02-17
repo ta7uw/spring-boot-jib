@@ -1,8 +1,8 @@
 # spring-boot-jib
 
 ## How to Use
-### Build docker image to Docker daemon 
-Jib can also build your image directly to a Docker daemon. 
+### Build docker image 
+Jib can also build your image directly.
 
 ```
 $ ./gradlew jibDockerBuild
@@ -18,7 +18,7 @@ springboot-jib-demo                        0.0.1-SNAPSHOT      fcd49c0fb403     
 ### Docker Run
 
 ```
-docker run -p 8080:8080 -d springboot-jib-demo:0.0.1-SNAPSHOT
+docker container  run -p 8080:8080 -it springboot-jib-demo:0.0.1-SNAPSHOT
 ```
  
 ```
